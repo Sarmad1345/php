@@ -288,6 +288,15 @@ if($age >= 18) {
    echo "You are not eligible to vote.";
 }
 
+/// Arrays in php 
+
+// indexed array
+
+
+$car = array("Volvo", "BMW", "Toyota");
+$human = array("sarmad", "student","Full Stack Developer");
+echo "<br>";
+echo "my name is : " . $human[0] . " My profession is: " . $human[2] . " and also i am a student of: " . $human[1];
 ?> 
 </body>
 </html>
