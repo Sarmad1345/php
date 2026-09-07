@@ -288,7 +288,7 @@ if($age >= 18) {
    echo "You are not eligible to vote.";
 }
 
-/// Arrays in php 
+/// Arrays and loops  in php 
 
 // indexed array
 
@@ -297,6 +297,39 @@ $car = array("Volvo", "BMW", "Toyota");
 $human = array("sarmad", "student","Full Stack Developer");
 echo "<br>";
 echo "my name is : " . $human[0] . " My profession is: " . $human[2] . " and also i am a student of: " . $human[1];
+
+//Change the value of the second item:
+
+$cars[1] = "Ford";
+var_dump($cars);
+echo "<br>";
+echo "the value of cars is: " . $cars[1];
+echo "<br>";
+// echo "the value of all cars is : " . $cars;   
+
+
+// for each loop in php
+
+foreach($car as $value){
+    echo $value . "<br>";
+}
+
+// for loop 
+
+for ($value = 0; $value < count($car); $value++) {
+    echo "The new value is : ".  $car[$value] . "<br>";
+}
+
+
+
+// associative array
+
+
+
 ?> 
+
+
+
+
 </body>
 </html>
