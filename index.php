@@ -313,23 +313,95 @@ echo "<br>";
 foreach($car as $value){
     echo $value . "<br>";
 }
-
+echo "<br>";
 // for loop 
 
 for ($value = 0; $value < count($car); $value++) {
     echo "The new value is : ".  $car[$value] . "<br>";
 }
 
-
+echo "<br>";
 
 // associative array
+
+$age = array("sarmad" => "25", "nadeem" => "30", "ali" => "35");
+
+echo "sarmad is " . $age['sarmad'] . " years old.";
+echo "<br>";
+echo "The age values are: ";
+
+foreach($age as $ageValue){
+    echo $ageValue . " ";
+}
+ 
+echo "<br>";
+
+// name and age printing 
+
+foreach($age as $name => $ageValue){
+    echo $name . " is " . $ageValue . " years old.<br>";
+}
+
+
+
+echo "<br>";
+
+// Update associative array 
+
+$cars = array("brand" => "Ford", "model" => "Mustang", "year" => 1964);
+$cars["year"] = 2024;
+
+echo $cars["year"];
+
+//  PHP Multidimensional Arrays
+$cars = array (
+    array("Volvo", 22, 18),
+    array("BMW", 15, 13),
+    array("Saab", 5, 2),
+    array("Land Rover", 17, 15)
+);
+
+foreach ($cars as $car) {
+    foreach ($car as $value) {
+        echo $value . " ";
+    }
+    echo "<br>";
+}
+
+
+
+    echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
+echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
+echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
+
+
+
+for ($row = 0; $row < 4; $row++) {
+  echo "<p><b>Row number $row</b></p>";
+  echo "<ul>";
+    for ($col = 0; $col < 3; $col++) {
+      echo "<li>".$cars[$row][$col]."</li>";
+    }
+  echo "</ul>";
+}
+
+
+echo "<table>";
+echo "<tr><th>Brand</th><th>Stock</th><th>Sold</th></tr>";
+
+foreach ($cars as $row) {
+  echo "<tr>";
+  foreach ($row as $cell) {
+    echo "<td>" . $cell . "</td>";
+  }
+  echo "</tr>";
+}
+echo "</table>";
 
 
 
 ?> 
-
-
-
-
 </body>
 </html>
+
