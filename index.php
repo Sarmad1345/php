@@ -370,7 +370,7 @@ foreach ($cars as $car) {
 
 
 
-    echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
 echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
 echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
 echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
@@ -399,8 +399,150 @@ foreach ($cars as $row) {
 }
 echo "</table>";
 
+ echo "<br>";
+/// php classes and objects 
+
+class Fruits {
+
+    public $fruitName;
+    public $fruitType;
+    public $fruitColor;
+
+    function setDetails($name,$type,$color){
+        $this->fruitName = $name;
+        $this->fruitType = $type;
+        $this->fruitColor = $color;
+    
+    }
+    function getDetails(){  
+        echo "This is the details of the fruits" . $this->fruitName . $this-> fruitType .$this->    fruitColor ;
+    
+    }
+}
 
 
+class Car {
+
+    public $brand;
+
+    function __construct($brand) {
+        $this->brand = $brand;
+    }
+
+    function get() {
+        echo "This is the brand: " . $this->brand;
+    }
+
+    function __destruct() {
+        echo "<br>Car object destroyed";
+    }
+}
+
+
+class BankAccount {
+
+    // Access Modifiers
+    private $accountName;
+    private $balance;
+    protected $bankName;
+    public $accountType;
+
+
+    // Constructor
+    public function __construct($accountName, $balance, $accountType) {
+
+        $this->accountName = $accountName;
+        $this->balance = $balance;
+        $this->accountType = $accountType;
+        $this->bankName = "HBL";
+
+    }
+
+
+    // Setter
+    public function setBalance($balance) {
+
+        $this->balance = $balance;
+
+    }
+
+
+    // Getter
+    public function getBalance() {
+
+        return $this->balance;
+
+    }
+
+
+    // Show Account Details
+    public function showAccount() {
+
+        echo "Account Name: " . $this->accountName;
+        echo "<br>";
+
+        echo "Balance: " . $this->balance;
+        echo "<br>";
+
+        echo "Bank Name: " . $this->bankName;
+        echo "<br>";
+ 
+        echo "Account Type: " . $this->accountType;
+
+    }
+
+
+    // Destructor
+    public function __destruct() {
+
+        echo "<br>Bank account object destroyed";
+
+    }
+
+}
+
+class Animal{
+    public $name;
+
+    function eat()
+    {
+        echo "This animal started eating";
+    }
+}
+
+class Dog extends Animal{
+
+}
+
+$dogDetails = new Dog();
+
+echo $dogDetails->name . "Tummy";
+
+$dogDetails->eat();
+
+// Create Object
+$account = new BankAccount("Sarmad", 50000, "Saving");
+// Update Balance
+$account->setBalance(75000);
+// Get Balance
+echo "Current Balance: " . $account->getBalance();
+
+echo "<br><br>";
+// Show Complete Account Details
+$account->showAccount();
+$car = new Car("Toyota");
+
+$car->get();
+$apple =  new Fruits();
+$apple->setDetails("Apple","clean","red");
+$apple->getDetails();
+ echo "<br>";
+$banana =  new Fruits();
+$banana->setDetails("Banana","clean","yellow");
+$banana->getDetails();
+
+$car = new Car("Toyota");
+$car->get();
 ?> 
 </body>
 </html>
